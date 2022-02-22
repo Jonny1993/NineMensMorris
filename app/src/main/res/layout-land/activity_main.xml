@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/the_board"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleX="0.9"
+        android:scaleY="0.9"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/remaining"
+        app:layout_constraintStart_toEndOf="@id/turn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/board" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="point_0, point_1, point_2"
+        app:flow_wrapMode="aligned"
+        app:flow_horizontalStyle="packed"
+        android:layout_marginHorizontal="60dp"
+        app:flow_horizontalGap="100dp"
+        app:layout_constraintEnd_toEndOf="@id/the_board"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/the_board"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:flow_horizontalGap="55dp"
+        app:flow_wrapMode="aligned"
+        android:layout_marginHorizontal="46dp"
+        app:flow_horizontalStyle="packed"
+        app:constraint_referenced_ids="point_3, point_4, point_5"
+        app:layout_constraintEnd_toEndOf="@id/the_board"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/the_board"
+        app:layout_constraintTop_toBottomOf="@id/flow_1"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        app:constraint_referenced_ids="point_6, point_7, point_8"
+        app:layout_constraintEnd_toEndOf="@id/the_board"
+        app:layout_constraintStart_toStartOf="@id/the_board"
+        app:layout_constraintTop_toBottomOf="@id/flow_2" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_4"
+        android:layout_width="0dp"
+        app:flow_horizontalStyle="packed"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="point_9, point_10, point_11"
+        app:layout_constraintStart_toStartOf="@id/flow_1"
+        app:layout_constraintTop_toBottomOf="@id/flow_3"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_5"
+        android:layout_width="0dp"
+        app:flow_horizontalStyle="packed"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="50dp"
+        app:constraint_referenced_ids="point_12, point_13, point_14"
+        app:layout_constraintEnd_toEndOf="@id/flow_1"
+        app:layout_constraintTop_toBottomOf="@id/flow_3"/>
+
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="180dp"
+        android:layout_marginTop="10dp"
+        app:constraint_referenced_ids="point_15, point_16, point_17"
+        app:layout_constraintEnd_toEndOf="@id/the_board"
+        app:layout_constraintStart_toStartOf="@id/the_board"
+        app:layout_constraintTop_toBottomOf="@id/flow_5" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:flow_horizontalGap="55dp"
+        app:flow_wrapMode="aligned"
+        android:layout_marginHorizontal="46dp"
+        app:flow_horizontalStyle="packed"
+        app:constraint_referenced_ids="point_18, point_19, point_20"
+        app:layout_constraintEnd_toEndOf="@id/the_board"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/the_board"
+        app:layout_constraintTop_toBottomOf="@id/flow_6"/>
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="point_21, point_22, point_23"
+        app:flow_wrapMode="aligned"
+        app:flow_horizontalStyle="packed"
+        android:layout_marginHorizontal="60dp"
+        app:flow_horizontalGap="100dp"
+        app:layout_constraintEnd_toEndOf="@id/the_board"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/the_board"
+        app:layout_constraintTop_toBottomOf="@id/flow_7" />
+
+    <ImageView
+        android:id="@+id/point_0"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot"/>
+
+    <ImageView
+        android:id="@+id/point_1"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_2"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+
+    <ImageView
+        android:id="@+id/point_3"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_4"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_5"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_6"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_7"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_8"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_9"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_10"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_11"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_12"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot"
+        tools:layout_editor_absoluteX="248dp" />
+
+    <ImageView
+        android:id="@+id/point_13"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_14"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_15"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_16"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_17"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_18"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_19"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_20"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_21"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_22"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_23"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:onClick="onTileClicked"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <ImageView
+        android:id="@+id/point_25"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/empty_spot" />
+
+    <TextView
+        android:id="@+id/turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="26dp"
+        android:text="@string/turn"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/turn_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" RED"
+        android:textColor="#FF0000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/turn"
+        app:layout_constraintStart_toEndOf="@id/turn"
+        app:layout_constraintTop_toTopOf="@+id/turn" />
+
+    <TextView
+        android:id="@+id/remaining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:layout_marginEnd="64dp"
+        android:text="Remaining\n\t\tPieces: "
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/new_game"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <TextView
+        android:id="@+id/remaining_pieces"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:text=" 9"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/remaining"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/remaining"
+        app:layout_constraintTop_toTopOf="@+id/remaining" />
+
+    <Button
+        android:id="@+id/new_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Game"
+        android:onClick="onNewGameClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="302dp"
+        tools:layout_editor_absoluteY="681dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
